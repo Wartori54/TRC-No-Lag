@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.wartori.trc_no_lag.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ClientPlayerInteractionManagerAccessor",
+    "MinecraftClientAccessor",
+    "MinecraftClientMixin",
+    "MinecraftServerMixin",
+    "PlayerManagerMixin",
+    "RenderTickCounterAccessor",
+    "SoundSystemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

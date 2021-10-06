@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "trc-no-lag",
+  "version": "${version}",
+  "name": "TRC No Input Lag",
+  "description": "Another TRC mod but lowering the tick rate doesn't increase input lag",
+  "authors": [
+    "Wartori"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/wartori/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.wartori.trc_no_lag.client.TRCNoInputLagClient"
+    ],
+    "main": [
+      "net.wartori.trc_no_lag.TRCNoInputLag"
+    ]
+  },
+  "mixins": [
+    "trc-no-lag.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.7",
+    "minecraft": "1.17.1"
+  }
+}

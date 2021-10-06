@@ -1,0 +1,4 @@
+{
+  "command.tickrate.get": "Current tickrate: %s",
+  "command.tickrate.set": "Tickrate set to: %s"
+}
