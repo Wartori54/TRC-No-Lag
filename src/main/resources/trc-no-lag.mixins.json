@@ -4,7 +4,9 @@
   "package": "net.wartori.trc_no_lag.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "AbstractBlockMixin",
     "ClientPlayerInteractionManagerAccessor",
+    "ClientPlayerInteractionManagerMixin",
     "MinecraftClientAccessor",
     "MinecraftClientMixin",
     "MinecraftServerMixin",

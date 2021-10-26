@@ -8,6 +8,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,6 +25,10 @@ public class TickManager {
     public static float tickTime = 50;
     public static MinecraftServer server = null;
     private static final Splitter COLON_SPLITTER = Splitter.on(":").limit(2);
+    public static final RenderTickCounter stableRTC = new RenderTickCounter(20, 0);
+    public static int stableTicksToDo = 0;
+    public static int ticksToDo = 0;
+    private static int ticksToGetDone = 0;
 
     public static void updateTickTime(float newTickTime) {
         if (server == null) {
@@ -66,7 +71,6 @@ public class TickManager {
             tickrateFileWriter.close();
             return true;
         } catch (IOException ex) {
-            // TODO: 2/10/21 log file creation error
             TRCNoInputLag.logger.error("Error while saving tickrate.txt:");
             TRCNoInputLag.logger.error(ex.getMessage());
             return false;
@@ -98,5 +102,17 @@ public class TickManager {
         } else {
             return false;
         }
+    }
+
+    public static void addTicksToGetDone(int ticks) {
+        TickManager.ticksToGetDone += ticks;
+    }
+
+    public static int getTicksToGetDone(boolean clear) {
+        int i = TickManager.ticksToGetDone;
+        if (clear) {
+            TickManager.ticksToGetDone = 0;
+        }
+        return i;
     }
 }
