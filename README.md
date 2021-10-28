@@ -19,3 +19,6 @@ But in this Tick Rate Changer, inputs are checked in another loop independent to
 
 *this is at 0.1 tps*
  
+ ## Links
+ - Curseforge: https://www.curseforge.com/minecraft/mc-mods/no-lag-tickratechanger
+ - Modrinth: https://modrinth.com/mod/no-lag-tickratechanger
