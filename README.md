@@ -1,4 +1,7 @@
 # No Lag Tick Rate Changer
+[![](https://img.shields.io/badge/Modloader-fabric-green)](https://fabricmc.net/)
+[![](http://cf.way2muchnoise.eu/477290.svg)](https://www.curseforge.com/minecraft/mc-mods/no-lag-tickratechanger)
+[![](http://cf.way2muchnoise.eu/versions/477290.svg)](https://www.curseforge.com/minecraft/mc-mods/no-lag-tickratechanger)
 
 This is another Tick Rate Changer mod, that lets you slow down and speed up time to perform epic gameplay blah blah blah…
 
