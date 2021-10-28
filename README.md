@@ -8,7 +8,7 @@ This is another Tick Rate Changer mod, that lets you slow down and speed up time
 
 In a common Tick Rate Changer, you change the tick per second that Minecraft runs at (by default 20), and because Minecraft check for inputs (like clicking) every tick, the input lag increases. (With 20 tps, 0.05 s of input lag, with 0.5 tps, 2s of input lag :C)
 
-But in this Tick Rate Changer, inputs are checked every frame instead of every tick, so slowing down doesn't increase input lag.
+But in this Tick Rate Changer, inputs are checked in another loop independent to the tps, so slowing down doesn't increase input lag.
 
 ## Comparison:
  
