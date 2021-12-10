@@ -8,4 +8,9 @@ public class MyUtil {
     public static MinecraftClient safeGetMinecraftClient() {
         return MinecraftClient.getInstance();
     }
+
+    // just so in can exist in EnvType.Server, like above
+    public static boolean safeGetMinecraftClientIsOnThread() {
+        return safeGetMinecraftClient().isOnThread();
+    }
 }

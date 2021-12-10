@@ -25,7 +25,7 @@ public class TickManager {
     public static float tickTime = 50;
     public static MinecraftServer server = null;
     private static final Splitter COLON_SPLITTER = Splitter.on(":").limit(2);
-    public static final RenderTickCounter stableRTC = new RenderTickCounter(20, 0);
+
     public static int stableTicksToDo = 0;
     public static int ticksToDo = 0;
     private static int ticksToGetDone = 0;
@@ -53,10 +53,7 @@ public class TickManager {
     }
 
 
-    @Environment(EnvType.CLIENT)
-    public static void resetTickTime() {
-        ((RenderTickCounterAccessor) ((MinecraftClientAccessor) MinecraftClient.getInstance()).getRenderTickCounter()).setTickTime(50);
-    }
+
 
     public static boolean saveTickRate() {
         Path worldDir = server.getSavePath(WorldSavePath.ROOT);

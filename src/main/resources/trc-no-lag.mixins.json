@@ -5,16 +5,16 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractBlockMixin",
-    "ClientPlayerInteractionManagerAccessor",
-    "ClientPlayerInteractionManagerMixin",
-    "MinecraftClientAccessor",
-    "MinecraftClientMixin",
     "MinecraftServerMixin",
-    "PlayerManagerMixin",
-    "RenderTickCounterAccessor",
-    "SoundSystemMixin"
+    "PlayerManagerMixin"
   ],
   "client": [
+    "ClientPlayerInteractionManagerAccessor",
+    "ClientPlayerInteractionManagerMixin",
+    "SoundSystemMixin",
+    "MinecraftClientAccessor",
+    "RenderTickCounterAccessor",
+    "MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,18 +1,12 @@
 package net.wartori.trc_no_lag.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.Mouse;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.network.ClientPlayerInteractionManager;
-import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Util;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.util.math.BlockPos;
-import net.wartori.trc_no_lag.TRCNoInputLag;
 import net.wartori.trc_no_lag.TickManager;
+import net.wartori.trc_no_lag.client.ClientTickManager;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,11 +25,10 @@ public abstract class MinecraftClientMixin {
     @Shadow @Nullable public Screen currentScreen;
 
     @Shadow @Final public GameRenderer gameRenderer;
-    public int ticksToDo = 0;
 
     @ModifyVariable(method = "render", at = @At(value = "STORE"), ordinal = 1)
     private int updateStableRTC(int i) {
-        TickManager.stableTicksToDo = TickManager.stableRTC.beginRenderTick(Util.getMeasuringTimeMs());
+        TickManager.stableTicksToDo = ClientTickManager.stableRTC.beginRenderTick(Util.getMeasuringTimeMs());
         return i;
     }
 
@@ -81,6 +74,6 @@ public abstract class MinecraftClientMixin {
 
     @Inject(method = "disconnect(Lnet/minecraft/client/gui/screen/Screen;)V", at = @At("TAIL"))
     private void onDisconnect(Screen screen, CallbackInfo ci) {
-        TickManager.resetTickTime();
+        ClientTickManager.resetTickTime();
     }
 }

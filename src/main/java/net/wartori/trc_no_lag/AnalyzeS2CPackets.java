@@ -13,5 +13,6 @@ public class AnalyzeS2CPackets {
     public static void executeUpdateTickRate(MinecraftClient client, ClientPlayNetworkHandler handler, PacketByteBuf buf, PacketSender responseSender) {
         float newTickTime = buf.readFloat();
         ((RenderTickCounterAccessor) ((MinecraftClientAccessor) client).getRenderTickCounter()).setTickTime(newTickTime);
+        TickManager.tickTime = newTickTime;
     }
 }

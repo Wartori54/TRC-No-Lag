@@ -19,9 +19,10 @@ public class AbstractBlockMixin {
     @Inject(method = "calcBlockBreakingDelta", at = @At("RETURN"), cancellable = true)
     private void calcBlockBreakingDelta(BlockState state, PlayerEntity player, BlockView world, BlockPos pos, CallbackInfoReturnable<Float> cir) {
         if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
-            if (MyUtil.safeGetMinecraftClient().isOnThread()) {
+            if (MyUtil.safeGetMinecraftClientIsOnThread()) {
                 cir.setReturnValue(cir.getReturnValue() / (TickManager.tickTime / 50.0F));
             }
+            
         }
     }
 }
