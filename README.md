@@ -15,3 +15,7 @@ But in this Tick Rate Changer, inputs are checked every frame instead of every t
 ![demo_25fps](https://user-images.githubusercontent.com/72220838/137369760-75a2e11e-3a4e-4e54-a492-06f462266b2f.gif)
 
 *this is at 0.1 tps*
+
+ ## Links
+ - Curseforge: https://www.curseforge.com/minecraft/mc-mods/no-lag-tickratechanger
+ - Modrinth: https://modrinth.com/mod/no-lag-tickratechanger
